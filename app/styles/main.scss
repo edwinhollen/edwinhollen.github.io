@@ -1,0 +1,116 @@
+// bower:scss
+// endbower
+*{box-sizing:border-box;}
+
+$container_width: 75%;
+
+$font_brand: 'Cutive', serif;
+
+$color_light: hsl(30, 100%, 97%);
+$color_lightText: desaturate(darken($color_light, 40), 60);
+
+$color_brand: hsl(90, 70%, 56%);
+
+body{
+  font-family: sans-serif;
+  background: $color_light;
+}
+
+a{
+  color: inherit;
+  font-weight: bold;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: $font_brand;
+}
+
+.container{
+  width: $container_width;
+  margin: 0 auto;
+  position: relative;
+
+  min-width: 480px;
+  max-width: 640px;
+}
+
+header.main{
+  color: $color_lightText;
+  text-align: center;
+  margin-bottom: 4em;
+  h1{
+    color: $color_brand;
+  }
+  .sub{
+    font-family: $font_brand;
+    //text-transform: uppercase;
+    //letter-spacing: 0.2em;
+    //font-size: 0.65em;
+    font-size: 0.85em;
+
+    text-shadow: hsla(0,0%,100%,0.4) 0 1px 0;
+  }
+}
+section{
+  color: $color_lightText;
+  border: darken($color_light, 5) 1px solid;
+  padding: 1em;
+  &.special{
+    text-align: center;
+  }
+}
+
+footer.main{
+  text-align: center;
+  color: $color_lightText;
+
+  .charlie.tango{
+    font-weight: bold;
+  }
+}
+
+.projects article{
+  position: relative;
+
+  h3{
+    display: inline-block;
+  }
+}
+.projects article .title{
+  display: inline-block;
+}
+.projects article .language:not(:empty){
+  &:before{
+    content: '(';
+  }
+
+  &:after{
+    content: ')';
+  }
+}
+.brackets:before, .brackets:after{
+  position: absolute;
+  font-weight: 100;
+}
+.brackets:before{
+  left: 0;
+}
+.brackets:after{
+  right: 0;
+}
+.brackets.css{
+  &:before{content:"{";}
+  &:after{content:"}";}
+}
+.brackets.html{
+  &:before{content:"<";}
+  &:after{content:"/>";}
+}
+.brackets.js{
+  &:before{content:"[";}
+  &:after{content:"]";}
+}
+.brackets.php{
+  &:before{content:"<?";}
+  &:after{content:"?>";}
+}
